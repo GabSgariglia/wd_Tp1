@@ -13,7 +13,29 @@ function WDTP1_enqueue_styles(){
 
 
     wp_enqueue_style( 'maincss', get_template_directory_uri(  ) . '/styles/main.css', array('latofont','merrifont') );
+}
+add_action( 'wp_enqueue_scripts', 'WDTP1_enqueue_styles' );
 
 
+function WDTP1_add_theme_support(){
+
+    //afficher image
+
+    add_theme_support( 'post-thumbnails');
+
+    add_theme_support( 'title-tag');
+}
+add_action( 'after_setup_theme' , 'WDTP1_add_theme_support' );
+
+
+
+function WDTP1_register_menus(){
+
+    register_nav_menus( array(
+
+        'main-menu'=> __('Menu principal')
+
+    ) );
 
 }
+add_action( 'after_setup_theme','WDTP1_register_menus');
