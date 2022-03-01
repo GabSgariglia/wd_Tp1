@@ -10,7 +10,7 @@
 <?php wp_body_open(  )?>
     <header>
 
-        <div>
+        <div class="flex">
             <section>
                 <h1><a href="<?php echo esc_url(home_url('/'))?>"><?php bloginfo('title')?></a></h1>
                 <div><?php bloginfo( 'description' )?></div>
@@ -25,7 +25,12 @@
                     wp_nav_menu( $args );
                 
                 ?>
+                
             </nav>
+                <form role="search" id="searchform" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <input type="text" class="search-field" name="s" placeholder="Rechercher" value="<?php echo get_search_query(); ?>">
+                <input type="submit" id="searchsubmit" value="Rechercher">
+                </form>
         </div>
 
     </header>

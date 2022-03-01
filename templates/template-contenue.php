@@ -32,13 +32,12 @@
             <section class="trois-quart">
 
 
-
             <?php if($query->have_posts(  )): ?>
 
-
+                <?php wp_dropdown_categories('show_option_all=All categories');?>
 
                 <?php while($query->have_posts(  )) : $query->the_post(  );?>
-
+                
                     <article class="flex">
 
                         <div class="image-article quart">
@@ -66,14 +65,7 @@
             <?php endif;?>
 
             </section>
-
-            <section class="quart sidebar">
-
-                <?php get_sidebar(  )?>
-
-            </section>
-
-        </div>
+</div>
 
 
 
