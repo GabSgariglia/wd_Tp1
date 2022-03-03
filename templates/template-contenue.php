@@ -27,20 +27,41 @@
 
 ?>
 
-<div class="flex">
+<?php if(is_archive(  )) : ?>
+            <h2><?php echo esc_html( get_the_category()[0]->name )?></h2>
+        <?php else : ?>
+            <h2>Toute les jeux</h2>
+<?php endif;?>
 
-            <section class="trois-quart">
+    <div class="categorie_conteneur">
+    <select class="categorie" name="event-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> 
+    <option value=""><?php echo esc_attr(__('Réchercher par catégorie')); ?></option> 
+
+    <?php 
+        $option = '<option value="' . get_option('home') . '/contenue/">Toute les catégorie</option>'; // change category to your custom page slug
+        $categories = get_categories(); 
+        foreach ($categories as $category) {
+            $option .= '<option value="'.get_option('home').'/category/'.$category->slug.'">';
+            $option .= $category->cat_name;
+            $option .= ' ('.$category->category_count.')';
+            $option .= '</option>';
+        }
+        echo $option;
+    ?>
+    </select>
+</div>
+
+<div class="flex">
+            
+            <section class="conteneur_article">
 
 
             <?php if($query->have_posts(  )): ?>
-
-                <?php wp_dropdown_categories('show_option_all=All categories');?>
-
-                <?php while($query->have_posts(  )) : $query->the_post(  );?>
+                     <?php while($query->have_posts(  )) : $query->the_post(  );?>
                 
-                    <article class="flex">
+                    <article  class="article" >
 
-                        <div class="image-article quart">
+                        <div class="image-article">
 
                             <?php if(has_post_thumbnail( )) : ?>
 
@@ -50,23 +71,25 @@
 
                         </div>
 
-                        <div class="texte-article trois-quart">
+                        <div class="texte-article ">
 
                             <h3><?php the_title();?></h3>
-
-                            <p> <?php the_excerpt(  );?><a href="<?php the_permalink(  )?>">En savoir plus...</a></p>
+                                
+                            <p> <?php the_excerpt(  );?></p><a class="btn_plus" href="<?php the_permalink(  )?>">En savoir plus...</a>
 
                         </div>
 
                     </article>
 
             <?php endwhile; ?>
+               
 
             <?php endif;?>
 
             </section>
 </div>
 
+<?php dynamic_sidebar('Widget 1')?>
 
 
 

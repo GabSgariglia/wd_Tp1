@@ -7,36 +7,37 @@
 <?php if(have_posts(  )): ?>
 
 
-
+<div class="conteneur_article">
 <?php while(have_posts(  )) : the_post(  );?>
 
-    <div class="flex post">
-             <div class="image-article quart">
+    
+        <article  class="article" >
+
+            <div class="image-article">
 
                 <?php if(has_post_thumbnail( )) : ?>
 
-                    <?php the_post_thumbnail('small', ['class' => 'fluide'] );?>
+                        <?php the_post_thumbnail('small', ['class' => 'fluide'] );?>
 
                 <?php endif ?>
 
             </div>
+
+            <div class="texte-article ">
+
+                <h3><?php the_title();?></h3>
                     
-
-            <div class="texte-article">
-
-                <h2><?php the_title();?></h2>
-
-                <p> <?php the_excerpt( );?><a href="<?php the_permalink(  )?>">En savoir plus...</a></p>
-
-                            
+                <p> <?php the_excerpt(  );?></p><a class="btn_plus" href="<?php the_permalink(  )?>">En savoir plus...</a>
 
             </div>
 
-    </div>
+        </article>
+
+    
 
     <?php endwhile; ?>
 
-
+</div>
 
     <?php else :?>
 

@@ -1,3 +1,36 @@
+:root{
+
+
+
+    /*Polices*/
+
+    --police-principale: "Lato";
+
+    --police-titres: 'Merriweather Sans';
+
+
+
+    /*Palette de couleurs*/
+
+    --clr-principale: #212E53;
+
+    --clr-accent: #BED3C3;
+
+    --clr-sombre: #111;
+
+    --clr-claire: #efefef;
+
+
+
+    /*Mesures*/
+
+    --largeur-contenus: 85%;
+
+
+
+}
+
+
 *{
     box-sizing: border-box;
 }
@@ -7,16 +40,143 @@ body{
     color: white;
     background-color: rgb(37, 37, 37);
     min-height: 100vh;
+    font-family: var(--police-principale);
 }
 header{
-    height: 150px;
-    background-color: #555;
+    height: 200px;
+    justify-content: center;
     display: flex;
+    text-align: center;
     align-items: center;
+    background-image: url(../image/banner.jpg);
+    background-position:  center;
+    background-size: cover;
 }
-.flex{
-    display: flex;
-}
+
 h1{
     margin-top: 0;
+}
+
+
+/*nav---------------------*/
+nav{
+    display: flex;
+    height: 35px;
+    align-items: center;
+    background-color: #da955a;
+    margin-bottom: 25px;
+    
+}
+.menu{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+ }
+.menu-item{
+    display: block;
+    flex-basis: 33.33%;
+}
+ .menu a{
+    display: block;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 8.5px 10px;
+    transition: all 300ms ease;
+    height: 100%;
+}
+.menu a:hover{
+    background-color: #11699b;
+    color: #efefef;
+}
+.nav_section{
+    width: 85%;
+}
+
+.nav_section_Search{
+    width: 15%;
+    text-align: right;
+}
+
+.searchform{
+    display: flex;
+    float: right;
+    width: 100%;
+}
+.btn_search{
+     margin: 0;
+     font-size: 20px;
+     height: 35px;
+     width: 15%;
+     border: none;
+     background-color: rgb(173, 173, 173);
+     transition: all 300ms ease;
+     cursor: pointer;
+}
+.btn_search:hover{
+    background-color: #11699b;
+}
+.search-field{
+    height: 35px;
+    border: none;
+    width: 85%;
+    margin-right: 0;
+}
+/*  */
+
+.fluide{
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+}
+.conteneur{
+    width: var(--largeur-contenus);
+    margin: 0 auto;
+}
+.conteneur_article{
+    display: flex;
+    flex-wrap: wrap;
+  
+}
+.article{
+    flex-basis: 33%;
+    padding: 10px;
+    text-align: center;
+    height: 500px;
+    
+}
+.btn_plus{
+    text-decoration: none;
+    color:#efefef;
+    background-color: #da955a;
+    padding: 10px 5px;
+    transition: all 300ms ease;
+    margin-bottom: 0;
+    
+}
+.btn_plus:hover{
+    background-color: #11699b;
+}
+p{
+    text-align:justify;
+}
+.categorie_conteneur{
+    display: flex;
+    margin-bottom: 20px;
+}
+.categorie{
+    background-color: #da955a;
+    border: none;
+    padding: 10px 10px;
+    cursor: pointer;
+
+}
+.categorie:hover{
+    background-color: #11699b;
+
 }
