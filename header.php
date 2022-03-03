@@ -13,7 +13,7 @@
 
         <div >
             <section>
-                <h1><a href="<?php echo esc_url(home_url('/'))?>"><?php bloginfo('title')?></a></h1>
+                <h1 ><a class="titre" href="<?php echo esc_url(home_url('/'))?>"><?php bloginfo('title')?></a></h1>
                 <div><?php bloginfo( 'description' )?></div>
             </section>
             

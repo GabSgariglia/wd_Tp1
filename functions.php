@@ -8,11 +8,7 @@ function WDTP1_enqueue_styles(){
 
 
 
-    wp_enqueue_style( 'merrifont', 'https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap' );
-
-
-
-    wp_enqueue_style( 'maincss', get_template_directory_uri(  ) . '/styles/main.css', array('latofont','merrifont') );
+    wp_enqueue_style( 'maincss', get_template_directory_uri(  ) . '/styles/main.css', array('latofont') );
 }
 add_action( 'wp_enqueue_scripts', 'WDTP1_enqueue_styles' );
 
